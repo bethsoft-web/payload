@@ -134,7 +134,7 @@ export const generateFileData = async <T>({
         const response = await getFileByPath(filePath)
         file = response
         overwriteExistingFiles = true
-      } else if (filename && collectionConfig.upload.adapter) {
+      } else if (filename && operation === 'update') {
         file = await getFile(req, collection, filename)
       } else if (filename && url) {
         // File is remote
